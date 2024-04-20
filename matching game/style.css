@@ -8,7 +8,6 @@ body {
   min-height: 100vw;
   min-width: 100vw;
   background-image: url("./background_blur.png");
-  background-size: cover;
   background-repeat: no-repeat;
   color: rgb(0, 0, 0);
   margin: 0;
