@@ -1,33 +1,49 @@
+@font-face {
+  font-family: PK;
+  src: url(/fonts/PK\ Nakhon\ Sawan\ Demo.ttf);
+}
+
 body {
+  font-family: PK;
   min-height: 100vw;
   min-width: 100vw;
-  background-color: #12181f;
-  color: white;
+  background-image: url("./background_blur.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  margin: 0;
 }
 
 h1 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 50px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
 }
 
 p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+  font-family: PK;
+  position: fixed;
+  right: 30%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .actions {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .actions button {
-    padding: 8px 16px;
-    font-size: 30px;
-    border-radius: 10px;
-    background-color: #feb603;
-    color: white;
+  font-family: PK;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  padding: 8px 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #feb603;
+  color: white;
 }
 
 .grid-container {
@@ -58,26 +74,27 @@ p {
 }
 
 .front, .back {
-    backface-visibility: hidden;
-    position: absolute;
-    border-radius: 10px;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .card .front {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotateY(0deg);
 }
 
 .card .back {
-  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='25' height='25' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M25 30a5 5 0 110-10 5 5 0 010 10zm0-25a5 5 0 110-10 5 5 0 010 10zM0 30a5 5 0 110-10 5 5 0 010 10zM0 5A5 5 0 110-5 5 5 0 010 5zm12.5 12.5a5 5 0 110-10 5 5 0 010 10z'  stroke-width='1' stroke='none' fill='hsla(174, 100%, 29%, 1)'/><path d='M0 15a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm25 0a2.5 2.5 0 110-5 2.5 2.5 0 010 5zM12.5 2.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm0 25a2.5 2.5 0 110-5 2.5 2.5 0 010 5z'  stroke-width='1' stroke='none' fill='hsla(187, 100%, 42%, 1)'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  background-image: url("./card.png");
   background-position: center center;
   background-size: cover;
-  backface-visib ility: hidden;
+  backface-visibility: hidden;
 }
 
 .card .front {

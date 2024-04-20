@@ -4,8 +4,6 @@ let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
 
-document.querySelector(".score").textContent = score;
-
 fetch("./data/cards.json")
   .then((res) => res.json())
   .then((data) => {
@@ -48,6 +46,7 @@ function flipCard() {
   if (this === firstCard) return;
 
   this.classList.add("flipped");
+  updateScore();
 
   if (!firstCard) {
     firstCard = this;
@@ -55,17 +54,24 @@ function flipCard() {
   }
 
   secondCard = this;
-  score++;
-  document.querySelector(".score").textContent = score;
   lockBoard = true;
 
   checkForMatch();
+
+  // Check if all cards are flipped and matched
+  if (document.querySelectorAll('.card:not(.flipped)').length === 0) {
+    // If all cards are flipped and matched, you can add the logic here if needed
+  }
 }
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
-  isMatch ? disableCards() : unflipCards();
+  if (isMatch) {
+    disableCards();
+  } else {
+    unflipCards();
+  }
 }
 
 function disableCards() {
@@ -96,4 +102,9 @@ function restart() {
   document.querySelector(".score").textContent = score;
   gridContainer.innerHTML = "";
   generateCards();
+}
+
+function updateScore() {
+  score++;
+  document.querySelector(".score").textContent = score;
 }
