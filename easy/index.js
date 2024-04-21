@@ -26,15 +26,17 @@ function shuffleCards() {
 }
 
 function generateCards() {
-  // Shuffle the cards before selecting
-  shuffleCards();
   // Select 6 unique cards
   const uniqueCards = cards.slice(0, 6);
   // Duplicate each unique card to create pairs
   const duplicatedCards = [...uniqueCards, ...uniqueCards];
-  // Shuffle the duplicated cards
+  // Shuffle the duplicated cards' positions
   shuffleCards(duplicatedCards);
-  // Display the duplicated cards on the grid
+  // Display the shuffled duplicated cards on the grid
+  for (let i = 0; i < duplicatedCards.length; i++) {
+    const randomIndex = Math.floor(Math.random() * duplicatedCards.length);
+    [duplicatedCards[i], duplicatedCards[randomIndex]] = [duplicatedCards[randomIndex], duplicatedCards[i]];
+  }
   for (let card of duplicatedCards) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
@@ -43,13 +45,11 @@ function generateCards() {
       <div class="front">
         <img class="front-image" src=${card.image} />
       </div>
-      <div class="back"></div>
-    `;
+      <div class="back"></div>`;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
-
 
 
 function flipCard() {
@@ -103,12 +103,20 @@ function resetBoard() {
 }
 
 function restart() {
-  resetBoard();
-  shuffleCards(); // Shuffle the cards again
+  // Reset score
   score = 0;
   document.querySelector(".score").textContent = score;
-  gridContainer.innerHTML = ""; // Clear the grid container
+
+  // Clear grid container
+  gridContainer.innerHTML = "";
+
+  // Re-generate shuffled cards
   generateCards();
+
+  // Reset game state
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
 }
 
 function updateScore() {
