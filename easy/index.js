@@ -26,11 +26,15 @@ function shuffleCards() {
 }
 
 function generateCards() {
-  // Shuffle the cards before duplicating
+  // Shuffle the cards before selecting
   shuffleCards();
-  // Duplicate the first 6 unique cards to create pairs
-  const duplicatedCards = [...cards.slice(0, 6), ...cards.slice(0, 6)];
-
+  // Select 6 unique cards
+  const uniqueCards = cards.slice(0, 6);
+  // Duplicate each unique card to create pairs
+  const duplicatedCards = [...uniqueCards, ...uniqueCards];
+  // Shuffle the duplicated cards
+  shuffleCards(duplicatedCards);
+  // Display the duplicated cards on the grid
   for (let card of duplicatedCards) {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
@@ -45,6 +49,7 @@ function generateCards() {
     cardElement.addEventListener("click", flipCard);
   }
 }
+
 
 
 function flipCard() {
