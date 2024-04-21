@@ -102,23 +102,6 @@ function resetBoard() {
   lockBoard = false;
 }
 
-function restart() {
-  // Reset score
-  score = 0;
-  document.querySelector(".score").textContent = score;
-
-  // Clear grid container
-  gridContainer.innerHTML = "";
-
-  // Re-generate shuffled cards
-  generateCards();
-
-  // Reset game state
-  firstCard = null;
-  secondCard = null;
-  lockBoard = false;
-}
-
 function updateScore() {
   score++;
   document.querySelector(".score").textContent = score;
