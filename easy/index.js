@@ -7,7 +7,7 @@ let score = 0;
 fetch("./data/cards.json")
   .then((res) => res.json())
   .then((data) => {
-    cards = [...data , ...data];
+    cards = [...data];
     shuffleCards();
     generateCards();
   });
