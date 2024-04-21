@@ -1,0 +1,103 @@
+@font-face {
+  font-family: PK;
+  src: url(/fonts/PK\ Nakhon\ Sawan\ Demo.ttf);
+}
+
+body {
+  font-family: PK;
+  min-height: 100vw;
+  min-width: 100vw;
+  background-image: url("./background_blur.png");
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+p {
+  font-family: PK;
+  position: fixed;
+  right: 30%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.actions button {
+  font-family: PK;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  padding: 8px 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #feb603;
+  color: white;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: calc(140px / 2 * 3);
+  width: 140px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  width: 100%;
+  height: 100%;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  transform: rotateY(0deg);
+}
+
+.card .back {
+  background-image: url("./back.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 94%;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
