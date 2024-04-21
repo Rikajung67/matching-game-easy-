@@ -1,0 +1,50 @@
+[
+    {
+        "image": "../assets/deci-1.png",
+        "name": "deci"
+    },
+    {
+        "image": "../assets/centi-2.png",
+        "name": "centi"
+    },
+    {
+        "image": "../assets/milli-3.png",
+        "name": "milli"
+    },
+    {
+        "image": "../assets/micro-6.png",
+        "name": "micro"
+    },
+    {
+        "image": "../assets/nano-9.png",
+        "name": "nano"
+    },
+    {
+        "image": "../assets/pico-12.png",
+        "name": "pico"
+    },
+    {
+        "image": "../assets/deca1.png",
+        "name": "deca"
+    },
+    {
+        "image": "../assets/hecto2.png",
+        "name": "hecto"
+    },
+    {
+        "image": "../assets/kilo3.png",
+        "name": "kilo"
+    },
+    {
+        "image": "../assets/mega6.png",
+        "name": "mega"
+    },
+    {
+        "image": "../assets/giga9.png",
+        "name": "giga"
+    },
+    {
+        "image": "../assets/tera12.png",
+        "name": "tera"
+    }
+]
